@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>卡牌網站 - 首頁</title>
+  <style>
+    :root{
+      --bg:#0f1720;
+      --card:#0b1220;
+      --accent:#7dd3fc;
+      --muted:#94a3b8;
+      --container-width:1100px;
+      --radius:12px;
+      --glass: rgba(255,255,255,0.02);
+      --text:#e6eef8;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071022 0%, #071827 60%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{
+      max-width:var(--container-width);
+      margin:0 auto;
+      padding:24px;
+    }
+
+    /* Header */
+    .site-header{
+      padding:28px 0;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(0deg, rgba(255,255,255,0.01), transparent);
+    }
+    .site-title{
+      margin:0;
+      font-size:28px;
+      letter-spacing:0.4px;
+    }
+    .site-sub{
+      margin:6px 0 0;
+      color:var(--muted);
+    }
+
+    /* Intro */
+    .intro{
+      margin:28px 0;
+      background:var(--glass);
+      padding:18px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .intro h2{margin:0 0 8px 0}
+    .intro p{margin:0;color:var(--muted)}
+
+    /* Links grid */
+    .links-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .card{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--text);
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 2px 8px rgba(2,6,23,0.45);
+    }
+    .card:hover, .card:focus{
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      outline: none;
+    }
+    .card:active{ transform: translateY(-2px); }
+
+    .card-icon{
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--accent);
+      flex-shrink:0;
+    }
+    .card-body h3{
+      margin:0 0 6px 0;
+      font-size:16px;
+    }
+    .card-body p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Footer */
+    .site-footer{
+      margin-top:32px;
+      padding:18px 0;
+      border-top:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* Accessibility focus */
+    .card:focus{
+      box-shadow: 0 0 0 3px rgba(125,211,252,0.12), 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:520px){
+      .site-title{ font-size:20px }
+      .card{ padding:12px }
+      .card-icon{ width:48px; height:48px }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">卡牌世界</h1>
+      <p class="site-sub">歡迎！選擇下面的連結前往不同分頁（會在新分頁開啟）。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>關於我們</h2>
+      <p>這是合併成單一檔案的首頁範例，下面按鈕會帶你到兩個分頁（新分頁）。</p>
+    </section>
+
+    <section class="links-grid" aria-label="快速連結">
+      <a class="card" href="https://115kkkken.github.io/1-17test/index.html" target="_blank" rel="noopener noreferrer" aria-label="前往分頁一（新分頁）">
+        <div class="card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="7" height="14" rx="1"></rect>
+            <rect x="14" y="3" width="7" height="10" rx="1"></rect>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>分頁一</h3>
+          <p>前往：index.html（你的第一個頁面）</p>
+        </div>
+      </a>
+
+      <a class="card" href="https://115kkkken.github.io/1-17test/index2.html" target="_blank" rel="noopener noreferrer" aria-label="前往分頁二（新分頁）">
+        <div class="card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="8" r="3"></circle>
+            <path d="M5.5 21a6.5 6.5 0 0113 0"></path>
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>分頁二</h3>
+          <p>前往：index2.html（你的第二個頁面）</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 卡牌世界 • 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // 合併後的 JS：追蹤卡片點擊（範例）
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          const href = card.getAttribute('href');
+          console.log('user-click', { href, timestamp: Date.now() });
+          // 若需發送到伺服器，取消下方註解並改成你的 endpoint
+          // navigator.sendBeacon('/track-click', JSON.stringify({href, ts: Date.now()}));
+        });
+      });
+    });
+  </script>
+</body>
+</html>
